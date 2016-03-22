@@ -36,7 +36,7 @@ public class PeopleListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.common_list, container, false);
+        View v = inflater.inflate(R.layout.common_list, container, false);//加载页面
         recyclerView = ButterKnife.findById(v, R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mLoadingView = ButterKnife.findById(v, R.id.v_loading);

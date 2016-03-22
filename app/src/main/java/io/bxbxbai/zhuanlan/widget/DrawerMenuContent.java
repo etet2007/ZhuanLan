@@ -1,5 +1,6 @@
 package io.bxbxbai.zhuanlan.widget;
 
+import android.app.Service;
 import android.content.Context;
 import android.support.annotation.DrawableRes;
 import io.bxbxbai.zhuanlan.R;
@@ -11,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by baia on 15/3/28.
  *
+ * 侧滑导航视图列表的内容
  * @author bxbxbai
  */
 public class DrawerMenuContent {

@@ -41,15 +41,18 @@ public class MainActivity extends BaseActivity {
 //        ChoreographerHelper.getInstance(this).start();
         mDrawerLayout = ButterKnife.findById(this, R.id.drawerLayout);
         initToolBar();
-        initToolbarAndDrawer();
+        initToolbarAndDrawer();//设置工具栏的监听函数
 
+        //侧滑导航视图列表的内容 content
         DrawerMenuContent content = new DrawerMenuContent(this);
         ListView listView = ButterKnife.findById(this, R.id.drawer_list);
         listView.setAdapter(new MenuAdapter(this, content.getItems()));
         listView.setOnItemClickListener(new OnMenuListClickListener(this, mDrawerLayout));
 
+        //在内容中添加Fragment
         getSupportFragmentManager().beginTransaction().add(R.id.container,
                 PeopleListFragment.newInstance()).commit();
+
         setOverflowShowAlways();
 
         //第一次启动，会打开抽屉菜单
@@ -89,9 +92,11 @@ public class MainActivity extends BaseActivity {
                     case R.id.action_settings:
                         T.showToast("Coming soon...");
                         break;
+
 //                        return prepareIntent(PrefsActivity.class);
 //                    case R.id.action_search:
 //                        return PostListActivity.start(MainActivity.this, "limiao");
+
                     case R.id.action_about:
                         return WebActivity.start(MainActivity.this, WebActivity.URL_BXBXBAI, "About Me");
                 }

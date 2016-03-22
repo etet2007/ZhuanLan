@@ -68,8 +68,8 @@ public class EntryActivity extends Activity {
         titleView = ButterKnife.findById(this, R.id.tv_title);
 
         Random r = new Random(SystemClock.elapsedRealtime());
-        mSplashImage.setImageResource(SPLASH_ARRAY[r.nextInt(SPLASH_ARRAY.length)]);
-//        mSplashImage.setImageResource(SPLASH_ARRAY[15]);
+//        mSplashImage.setImageResource(SPLASH_ARRAY[r.nextInt(SPLASH_ARRAY.length)]);
+        mSplashImage.setImageResource(SPLASH_ARRAY[15]);//固定的图片
         animateImage();
 //        applyBlur();
     }
@@ -85,7 +85,7 @@ public class EntryActivity extends Activity {
         set.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                MainActivity.start(EntryActivity.this);
+                MainActivity.start(EntryActivity.this); //实际上调用了 Intent进行跳转
                 EntryActivity.this.finish();
             }
         });
